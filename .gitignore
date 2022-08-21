@@ -2,7 +2,7 @@
 /golang-samples
 
 # Testing scripts.
-/run-*.sh
+/**/run-*.sh
 
 # Work in progress.
 /__WIP__/**
