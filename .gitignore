@@ -1,8 +1,8 @@
 # Build outputs.
 /golang-samples
 
-# Testing scripts.
-/**/run-*.sh
+# Testing scripts credentials.
+/.oauth-*
 
 # Work in progress.
 /__WIP__/**
