@@ -61,6 +61,6 @@ func main() {
 		log.Fatalf("TestIamPermissions: %s", err)
 	}
 
-	log.Printf("resource   				 : %s", Album)
+	log.Printf("resource           : %s", Album)
 	log.Printf("allowed permissions: %v", response.GetPermissions())
 }
