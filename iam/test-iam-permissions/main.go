@@ -9,7 +9,7 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/genproto/googleapis/iam/v1"
 
-	gapic "github.com/animeapis/api-go-client/image/v1alpha1"
+	gapic "github.com/animeapis/api-go-client/iam/admin/v1alpha1"
 )
 
 var (
@@ -27,7 +27,7 @@ var (
 
 var (
 	TokenURL = "https://accounts.animeshon.com/o/oauth2/token"
-	Endpoint = "image.animeapis.com:443"
+	Endpoint = "iam.animeapis.com:443"
 )
 
 func main() {
@@ -44,9 +44,9 @@ func main() {
 		option.WithTokenSource(config.TokenSource(ctx)),
 	}
 
-	client, err := gapic.NewClient(ctx, options...)
+	client, err := gapic.NewIamClient(ctx, options...)
 	if err != nil {
-		log.Fatalf("NewClient: %s", err)
+		log.Fatalf("NewIamClient: %s", err)
 	}
 
 	request := &iam.TestIamPermissionsRequest{
