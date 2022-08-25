@@ -2,11 +2,12 @@ package main
 
 import (
 	"context"
+	"crypto/x509"
 	"log"
 
-	"golang.org/x/oauth2/clientcredentials"
-
 	"google.golang.org/api/option"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 
 	gapic "github.com/animeapis/api-go-client/identity/v1alpha1"
 	identity "github.com/animeapis/go-genproto/identity/v1alpha1"
@@ -14,28 +15,28 @@ import (
 
 var (
 	User = "[USER]"
-
-	ClientID     = "[CLIENT-ID]"
-	ClientSecret = "[CLIENT-SECRET]"
 )
 
 var (
-	TokenURL = "https://accounts.animeshon.com/o/oauth2/token"
 	Endpoint = "identity.animeapis.com:443"
 )
 
 func main() {
 	ctx := context.Background()
 
-	config := &clientcredentials.Config{
-		ClientID:     ClientID,
-		ClientSecret: ClientSecret,
-		TokenURL:     TokenURL,
+	pool, err := x509.SystemCertPool()
+	if err != nil {
+		log.Fatalf("SystemCertPool: %s", err)
 	}
+
+	transportCredentials := grpc.WithTransportCredentials(
+		credentials.NewClientTLSFromCert(pool, ""),
+	)
 
 	options := []option.ClientOption{
 		option.WithEndpoint(Endpoint),
-		option.WithTokenSource(config.TokenSource(ctx)),
+		option.WithoutAuthentication(),
+		option.WithGRPCDialOption(transportCredentials),
 	}
 
 	client, err := gapic.NewClient(ctx, options...)
