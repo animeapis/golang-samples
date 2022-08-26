@@ -6,7 +6,7 @@ replace github.com/opendoor-labs/protoc-gen-graphql => github.com/martinxsliu/pr
 
 require (
 	github.com/animeapis/api-go-client v0.0.0-20220825183434-86a7fc1c7a67
-	github.com/animeapis/go-genproto v0.0.0-20220825183434-194ccbe27a35
+	github.com/animeapis/go-genproto v0.0.0-20220826230217-7354c7c20b36
 	golang.org/x/oauth2 v0.0.0-20220822191816-0ebed06d0094
 	google.golang.org/api v0.94.0
 	google.golang.org/genproto v0.0.0-20220822174746-9e6da59bd2fc
@@ -24,7 +24,7 @@ require (
 	github.com/googleapis/gax-go/v2 v2.5.1 // indirect
 	github.com/opendoor-labs/protoc-gen-graphql v0.0.0-00010101000000-000000000000 // indirect
 	go.opencensus.io v0.23.0 // indirect
-	golang.org/x/net v0.0.0-20220822230855-b0a4917ee28c // indirect
+	golang.org/x/net v0.0.0-20220826154423-83b083e8dc8b // indirect
 	golang.org/x/sys v0.0.0-20220825204002-c680a09ffe64 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
