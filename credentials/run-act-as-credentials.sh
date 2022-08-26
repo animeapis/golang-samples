@@ -13,7 +13,7 @@ go build \
     -X 'main.TokenURL=https://accounts.animeshon.dev/o/oauth2/token'
     -X 'main.Endpoint=credentials.animeapis.dev:443'
   " \
-  ./credentials/get-credentials
+  ./credentials/act-as-credentials
 
 ./golang-samples
 

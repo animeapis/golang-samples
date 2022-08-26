@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	Credentials = "[CREDENTIALS]"
+	Flow = "[FLOW]"
 
 	ClientID     = "[CLIENT-ID]"
 	ClientSecret = "[CLIENT-SECRET]"
@@ -38,22 +38,19 @@ func main() {
 		option.WithTokenSource(config.TokenSource(ctx)),
 	}
 
-	client, err := gapic.NewKeeperClient(ctx, options...)
+	client, err := gapic.NewOAuth2Client(ctx, options...)
 	if err != nil {
-		log.Fatalf("NewKeeperClient: %s", err)
+		log.Fatalf("NewOAuth2Client: %s", err)
 	}
 
-	request := &credentials.ActAsCredentialsRequest{
-		Name: Credentials,
+	request := &credentials.SignInRequest{
+		Name: Flow,
 	}
 
-	response, err := client.ActAsCredentials(ctx, request)
+	response, err := client.SignIn(ctx, request)
 	if err != nil {
-		log.Fatalf("ActAsCredentials: %s", err)
+		log.Fatalf("SignIn: %s", err)
 	}
 
-	log.Printf("[oauth2] access token: %s", response.AccessToken)
-
-	log.Printf("[basic] username     : %s", response.Basic.GetUsername())
-	log.Printf("[basic] password     : %s", response.Basic.GetPassword())
+	log.Printf("authorization url: %s", response.AuthorizationUrl)
 }

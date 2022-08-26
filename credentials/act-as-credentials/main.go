@@ -43,18 +43,17 @@ func main() {
 		log.Fatalf("NewKeeperClient: %s", err)
 	}
 
-	request := &credentials.GetCredentialsRequest{
+	request := &credentials.ActAsCredentialsRequest{
 		Name: Credentials,
 	}
 
-	response, err := client.GetCredentials(ctx, request)
+	response, err := client.ActAsCredentials(ctx, request)
 	if err != nil {
-		log.Fatalf("GetCredentials: %s", err)
+		log.Fatalf("ActAsCredentials: %s", err)
 	}
 
-	log.Printf("name                 : %s", response.GetName())
-	log.Printf("uid                  : %s", response.GetUid())
-	log.Printf("active               : %t", response.GetActive().GetValue())
-	log.Printf("authentication method: %s", response.GetAuthenticationMethod().String())
-	log.Printf("principal            : %s", response.GetPrincipal())
+	log.Printf("[oauth2] access token: %s", response.AccessToken)
+
+	log.Printf("[basic] username     : %s", response.Basic.GetUsername())
+	log.Printf("[basic] password     : %s", response.Basic.GetPassword())
 }
