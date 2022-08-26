@@ -5,12 +5,13 @@ go 1.19
 replace github.com/opendoor-labs/protoc-gen-graphql => github.com/martinxsliu/protoc-gen-graphql v0.0.0-20210706185934-7b4f2fe658ef
 
 require (
-	github.com/animeapis/api-go-client v0.0.0-20220822234102-adf583e690e5
-	github.com/animeapis/go-genproto v0.0.0-20220822234103-880471b0f716
+	github.com/animeapis/api-go-client v0.0.0-20220825183434-86a7fc1c7a67
+	github.com/animeapis/go-genproto v0.0.0-20220825183434-194ccbe27a35
 	golang.org/x/oauth2 v0.0.0-20220822191816-0ebed06d0094
 	google.golang.org/api v0.94.0
 	google.golang.org/genproto v0.0.0-20220822174746-9e6da59bd2fc
-	google.golang.org/grpc v1.48.0
+	google.golang.org/grpc v1.49.0
+	google.golang.org/protobuf v1.28.1
 )
 
 require (
@@ -24,9 +25,8 @@ require (
 	github.com/opendoor-labs/protoc-gen-graphql v0.0.0-00010101000000-000000000000 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/net v0.0.0-20220822230855-b0a4917ee28c // indirect
-	golang.org/x/sys v0.0.0-20220818161305-2296e01440c6 // indirect
+	golang.org/x/sys v0.0.0-20220825204002-c680a09ffe64 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

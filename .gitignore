@@ -3,6 +3,7 @@
 
 # Testing scripts credentials.
 /.oauth-*
+/.test-*
 
 # Work in progress.
 /__WIP__/**
