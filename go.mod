@@ -5,8 +5,8 @@ go 1.19
 replace github.com/opendoor-labs/protoc-gen-graphql => github.com/martinxsliu/protoc-gen-graphql v0.0.0-20210706185934-7b4f2fe658ef
 
 require (
-	github.com/animeapis/api-go-client v0.0.0-20220825183434-86a7fc1c7a67
-	github.com/animeapis/go-genproto v0.0.0-20220826230217-7354c7c20b36
+	github.com/animeapis/api-go-client v0.0.0-20220827011059-8e576fb9f72d
+	github.com/animeapis/go-genproto v0.0.0-20220827011100-d55cc175e73f
 	golang.org/x/oauth2 v0.0.0-20220822191816-0ebed06d0094
 	google.golang.org/api v0.94.0
 	google.golang.org/genproto v0.0.0-20220822174746-9e6da59bd2fc
@@ -15,6 +15,7 @@ require (
 )
 
 require (
+	cloud.google.com/go v0.102.1 // indirect
 	cloud.google.com/go/compute v1.9.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
