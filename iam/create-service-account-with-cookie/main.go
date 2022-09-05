@@ -23,7 +23,7 @@ var (
 )
 
 var (
-	Endpoint = "image.animeapis.com:443"
+	Endpoint = "iam.animeapis.com:443"
 )
 
 func main() {
