@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	ContributionName = "[CONTRIBUTION NAME]"
+	ContributionName = "[CONTRIBUTION-NAME]"
 
 	ClientID     = "[CLIENT-ID]"
 	ClientSecret = "[CLIENT-SECRET]"
